@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "webauthn-simple-app": "^2.0.0"
+  }
+}
