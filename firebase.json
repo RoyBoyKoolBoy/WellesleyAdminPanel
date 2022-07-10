@@ -9,10 +9,7 @@
     "cleanUrls": true
   },
   "emulators": {
-    "hosting": {
-      "port": 6900,
-      "host": "0.0.0.0"
-    },
+    
     "ui": {
       "enabled": true
     }

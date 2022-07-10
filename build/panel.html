@@ -38,14 +38,15 @@
         padding: 0;
       }
 
-      div.topcontent {
-        display: inline-block;
-        align-items: center;
+      div.content {
         margin: 0;
-        padding: 150px;
         position: absolute;
-        top: 150px;
-        transform: translateY(-50%);
+        left: 20%;
+        position: fixed;
+        height: 100%;
+        width: 80%;
+        text-align: left;
+        padding: 0px 50px;
       }
 
       div.sidepanel {
@@ -77,16 +78,30 @@
 
       h1 {
         direction: ltr;
-        background-image:
+        /* background-image:
           linear-gradient(25deg, #2193B0, #6DD5ED);
         background-clip: text;
-        color: transparent;
+        color: transparent; */
+        color: #191919;
         font-family: 'Poppins', sans-serif;
         font-size: 30px; font-weight: bold;
         vertical-align: middle;
         margin: 0;
-        padding: 30px;
         text-align: center;
+      }
+
+      h2 {
+        direction: ltr;
+        /* background-image:
+          linear-gradient(25deg, #2193B0, #6DD5ED);
+        background-clip: text;
+        color: transparent; */
+        color: #191919;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px; font-weight: bold;
+        vertical-align: middle;
+        margin: 0;
+        text-align: left;
       }
 
       h4 {
@@ -94,7 +109,7 @@
         color: #191919;
         font-family: 'Poppins', sans-serif;
         font-size: 15px;
-        font-weight: 400;
+        font-weight: 500;
         vertical-align: center;
         text-align: center;
         margin: 0;
@@ -102,10 +117,22 @@
         bottom: 0;
       }
 
+      h3 {
+        direction: ltr;
+        color: #191919;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        vertical-align: center;
+        margin: 0;
+        padding: 0px 15px;
+        bottom: 0;
+      }
+
       div.bottom {
         position: absolute;
         width: 100%;
-        bottom: 40px;
+        bottom: 15px;
         text-align: center;
       }
 
@@ -135,13 +162,15 @@
 
       .button {
         background-color: #C0C0C0;
-        border-radius: 40px;
+        border-radius: 20px;
         color: #191919;
         border: none;
         text-align: center;
         font-size: 20px;
-        width: 75%;
-        height: 50px;
+        font-weight: 500;
+        width: 85%;
+        height: auto;
+        padding: 10px 30px;
         font-family: 'Poppins', sans-serif;
         cursor: pointer;
       }
@@ -150,42 +179,96 @@
         background-color: transparent;
         height: 15px;
       }
+
+      div.doublespacing {
+        background-color: transparent;
+        height: 30px;
+      }
+
+      input[type=text].number {
+        background-color: #E0E0E0;
+        border-radius: 40px;
+        padding: 10px 15px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        outline: none;
+        outline-width: 0;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        width: 200px;
+      }
+
+      input[type=text] {
+        background-color: #E0E0E0;
+        border-radius: 40px;
+        padding: 10px 15px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        outline: none;
+        outline-width: 0;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+      }
+
+      .content_button {
+        background-color: #191919;
+        border-radius: 40px;
+        color: #FFFFFF;
+        border: none;
+        text-align: center;
+        font-size: 20px;
+        padding: 10px 20px;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+      }
     </style>
   </head>
 
   <body>
     <div class="sidepanel">
+      <div class="doublespacing"></div>
+
       <h1>
         Admin Panel
       </h1>
 
+      <div class="doublespacing"></div>
+
       <button class="button">
-        Testing
+        Manage Tournaments
       </button>
 
       <div class="spacing"></div>
 
       <button class="button">
-        Testing
+        Global Server Messaging 
       </button>
 
       <div class="spacing"></div>
 
       <button class="button">
-        Testing
+        Manage Leaderboard
       </button>
 
       <div class="spacing"></div>
 
       <button class="button">
-        Testing
+        Manage Wellesley Cash
       </button>
 
       <div class="spacing"></div>
 
       <button class="button">
-        Testing
+        Manage Players
       </button>
+
+      <div class="spacing"></div>
 
       <div class="bottom">
         <h4>
@@ -194,7 +277,25 @@
       </div>
     </div>
 
-    <div class="spacing"></div>
+    <div class="content" id="manage_tournaments">
+      <div class="doublespacing"></div>
+      
+      <h2>
+        Manage Tournaments
+      </h2>
+
+      <div class="doublespacing"></div>
+
+      <input type="text" id="tournament_name" name="tournament_name" placeholder="Tournament Name">
+      <div class="spacing"></div>
+      <input type="text" class="number" id="tournament_id" name="tournament_id" maxlength="4" placeholder="Tournament ID" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+
+      <div class="doublespacing"></div>
+      
+      <h3 hidden="true">Tournament Already Exists</h3>
+      <div class="spacing"></div>
+      <button class="content_button" id="tournament">Start Tournament</button>
+    </div>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
