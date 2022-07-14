@@ -91,6 +91,20 @@
         text-align: center;
       }
 
+      h6 {
+        direction: ltr;
+        /* background-image:
+          linear-gradient(25deg, #2193B0, #6DD5ED);
+        background-clip: text;
+        color: transparent; */
+        color: #191919;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px; font-weight: bold;
+        vertical-align: middle;
+        margin: 0;
+        text-align: center;
+      }
+
       h2 {
         direction: ltr;
         /* background-image:
@@ -122,7 +136,7 @@
         direction: ltr;
         color: #191919;
         font-family: 'Poppins', sans-serif;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 500;
         vertical-align: center;
         margin: 0;
@@ -179,6 +193,11 @@
       div.spacing {
         background-color: transparent;
         height: 15px;
+      }
+
+      div.panelspacing {
+        background-color: transparent;
+        height: 5px;
       }
 
       div.doublespacing {
@@ -286,16 +305,14 @@
       </h2>
 
       <div class="doublespacing"></div>
-
-      <input type="text" id="tournament_name" name="tournament_name" placeholder="Tournament Name">
-      <div class="spacing"></div>
-      <input type="text" class="number" id="tournament_id" name="tournament_id" maxlength="4" placeholder="Tournament ID" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
-
       <div class="doublespacing"></div>
-      
-      <h3 hidden="true">Tournament Already Exists</h3>
-      <div class="spacing"></div>
-      <button class="content_button" id="tournament">Start Tournament</button>
+
+      <h6>Create Tournament</h6>
+      <input type="text" class="number" id="tournament_id" name="tournament_id" maxlength="4" placeholder="Tournament ID" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+      <div class="panelspacing"></div>
+      <h3 hidden="true" id="already_exists">Tournament Already Exists</h3>
+      <div class="panelspacing"></div>
+      <button class="content_button" id="tournament_start" hidden="true">Start Tournament</button>
     </div>
 
     <script>

@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
+    "node-fetch": "^3.2.6",
+    "superagent": "^8.0.0",
     "webauthn-simple-app": "^2.0.0"
   }
 }
